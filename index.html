@@ -4,15 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Money Master</title>
 </head>
-<body>
+<body class="font-sans">
     <header>
-        <h1>This is money master.</h1>
+        <div class="flex justify-center mt-5 min-h-full">
+            <h1 class="text-5xl text-center font-bold text-teal-400">Money Master</h1>
+            <img class="w-12" src="images/money-bag.png" alt="">
+        </div>
     </header>
 
-    <main>
-        
+    <main class="mt-5">
+        <section>
+            <div class="grid grid-cols-2 gap-10 p-8">
+                <div>
+                    <img src="images/money.jpg" alt="">
+                </div>
+
+                <div class="flex justify-center p-4 bg-slate-50">
+                    <div>
+                        <h5 class="text-2xl font-semibold text-center">Income</h5>
+                        <div class="mt-5">
+                            <label for="" class="font-semibold mr-2">Income:</label>
+                            <input class="bg-slate-200 py-2 px-10 rounded" type="number" name="" id="">
+                        </div>
+                        <h5 class="text-2xl font-semibold text-center mt-5">Expenses</h5>
+                        <div class="mt-5 ml-4">
+                            <label for="" class="font-semibold mr-2">Food:</label>
+                            <input class="bg-slate-200 py-2 px-10 rounded" type="number" name="" id="">
+                        </div>
+                        <div class="mt-5 ml-5">
+                            <label for="" class="font-semibold mr-2">Rent:</label>
+                            <input class="bg-slate-200 py-2 px-10 rounded" type="number" name="" id="">
+                        </div>
+                        <div class="mt-5 ml-2">
+                            <label for="" class="font-semibold mr-2">Cloths:</label>
+                            <input class="bg-slate-200 py-2 px-10 rounded" type="number" name="" id="">
+                        </div>
+                        <div class="flex justify-center mt-5">
+                            <button type="submit" class="bg-teal-400 px-10 py-2 text-white font-bold text-1xl rounded">Calculate</button>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-center mt-5">Total Expenses: <span>550</span> tk</h3>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-center mt-5">Balance: <span>550</span> tk</h3>
+                        </div>
+                        <div class="flex justify-center mt-5">
+                            <label for="" class="font-semibold mr-2">Save:</label>
+                            <input class="bg-slate-200 w-15 py-2 px-2 rounded" type="number" name="" id="">
+                            <h5 class="font-semibold mx-3 text-2xl">%</h5>
+                            <button type="submit" class="bg-teal-400 px-10 py-2 text-white font-bold text-1xl rounded">Calculate</button>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-center mt-5">Saving amount: <span>550</span> tk</h3>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-center mt-5">Remaining balance: <span>550</span> tk</h3>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
     </main>
 
 
