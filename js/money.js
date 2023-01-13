@@ -49,18 +49,28 @@ document.getElementById('save-button').addEventListener('click', function() {
     const saveInputField = document.getElementById('save-input');
     const saveInputText = saveInputField.value;
     const saveInputInt = parseFloat(saveInputText);
-    const saveInputPercentage = saveInputInt / 100;
+    let saveInputPercentage;
+    if(saveInputInt > 100) {
+        alert("Saving rate can't be more than 100");
+    }else{
+        saveInputPercentage = saveInputInt / 100;
+    }
     const incomeInputValue = getInputValue('income-input');
-    const savingAmount = incomeInputValue * saveInputPercentage;
+    let savingAmount = incomeInputValue * saveInputPercentage;
     const savingAmountField = document.getElementById('saving-amount');
-    savingAmountField.innerText = savingAmount;
+    
 
     const totalExpenses = getTotalExpenses();
     const balanceAmount = document.getElementById('balance-text');
     const inputValue = getInputValue('income-input');
-    const remainingBalance = inputValue - totalExpenses;
+    let remainingBalance = inputValue - totalExpenses;
     const remainingBalanceAmount = remainingBalance - savingAmount;
     const remainingBalanceAfterSavings = document.getElementById('remaining-balance');
-    remainingBalanceAfterSavings.innerText = remainingBalanceAmount;
+    if(savingAmount > remainingBalance){
+        alert("Saving amount can't be more than remaining balance.");
+    }else{
+        savingAmountField.innerText = savingAmount;
+        remainingBalanceAfterSavings.innerText = remainingBalanceAmount;
+    }
     // console.log(savingAmount);
 });
