@@ -19,6 +19,16 @@ function getTotalExpenses() {
 
 document.getElementById('calculate-button').addEventListener('click', function() {
     const totalExpenses = getTotalExpenses();
-    console.log(totalExpenses);
-    
+    const totalExpenseAmount = document.getElementById('total-expenses');
+    totalExpenseAmount.innerText = totalExpenses;
+    // console.log(totalExpenses);
+    const balanceAmount = document.getElementById('balance-text');
+    const inputValue = getInputValue('income-input');
+    const remainingBalance = inputValue - totalExpenses;
+    balanceAmount.innerText = remainingBalance;
 })
+
+
+document.getElementById('save-button').addEventListener('click', function() {
+    console.log('Save button clicked');
+});
