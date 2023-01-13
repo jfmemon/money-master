@@ -52,7 +52,10 @@ document.getElementById('save-button').addEventListener('click', function() {
     let saveInputPercentage;
     if(saveInputInt > 100) {
         alert("Saving rate can't be more than 100");
-    }else{
+    }else if(saveInputField.value == '') {
+        alert("Saving rate input field can't be empty.");
+    }
+    else{
         saveInputPercentage = saveInputInt / 100;
     }
     const incomeInputValue = getInputValue('income-input');
@@ -61,14 +64,16 @@ document.getElementById('save-button').addEventListener('click', function() {
     
 
     const totalExpenses = getTotalExpenses();
-    const balanceAmount = document.getElementById('balance-text');
     const inputValue = getInputValue('income-input');
     let remainingBalance = inputValue - totalExpenses;
     const remainingBalanceAmount = remainingBalance - savingAmount;
     const remainingBalanceAfterSavings = document.getElementById('remaining-balance');
     if(savingAmount > remainingBalance){
         alert("Saving amount can't be more than remaining balance.");
-    }else{
+    }else if(saveInputField.value == '') {
+        alert("Saving rate input field can't be empty.");
+    }
+    else{
         savingAmountField.innerText = savingAmount;
         remainingBalanceAfterSavings.innerText = remainingBalanceAmount;
     }
