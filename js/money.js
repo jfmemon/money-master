@@ -29,6 +29,23 @@ document.getElementById('calculate-button').addEventListener('click', function()
 })
 
 
+
 document.getElementById('save-button').addEventListener('click', function() {
-    console.log('Save button clicked');
+    const saveInputField = document.getElementById('save-input');
+    const saveInputText = saveInputField.value;
+    const saveInputInt = parseFloat(saveInputText);
+    const saveInputPercentage = saveInputInt / 100;
+    const incomeInputValue = getInputValue('income-input');
+    const savingAmount = incomeInputValue * saveInputPercentage;
+    const savingAmountField = document.getElementById('saving-amount');
+    savingAmountField.innerText = savingAmount;
+
+    const totalExpenses = getTotalExpenses();
+    const balanceAmount = document.getElementById('balance-text');
+    const inputValue = getInputValue('income-input');
+    const remainingBalance = inputValue - totalExpenses;
+    const remainingBalanceAmount = remainingBalance - savingAmount;
+    const remainingBalanceAfterSavings = document.getElementById('remaining-balance');
+    remainingBalanceAfterSavings.innerText = remainingBalanceAmount;
+    // console.log(savingAmount);
 });
