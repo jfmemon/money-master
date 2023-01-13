@@ -30,7 +30,10 @@ document.getElementById('calculate-button').addEventListener('click', function()
     const totalExpenseAmount = document.getElementById('total-expenses');
     if(totalExpenses > inputValue) {
         alert("Total expenses can't be more than income.");
-    }else{
+    }else if(isNaN(totalExpenses)) {
+        alert("Empty field not allow.");
+    }
+    else{
         totalExpenseAmount.innerText = totalExpenses;
     }
     // console.log(totalExpenses);
@@ -38,7 +41,10 @@ document.getElementById('calculate-button').addEventListener('click', function()
     const remainingBalance = inputValue - totalExpenses;
     if(remainingBalance < 0) {
         alert("Balance can't be negative");
-    }else{
+    }else if(isNaN(remainingBalance)) {
+        alert("Empty field can't be empty.");
+    }
+    else{
         balanceAmount.innerText = remainingBalance;
     }
 })
@@ -72,6 +78,10 @@ document.getElementById('save-button').addEventListener('click', function() {
         alert("Saving amount can't be more than remaining balance.");
     }else if(saveInputField.value == '') {
         alert("Saving rate input field can't be empty.");
+    }else if(isNaN(savingAmount)){
+        alert("Oops");
+    }else if(isNaN(remainingBalanceAmount)) {
+        alert("Oops");
     }
     else{
         savingAmountField.innerText = savingAmount;
